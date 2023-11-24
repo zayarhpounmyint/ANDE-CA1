@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">My Mobile App</string>
-    <string name="title">Hello World!</string>
+    <string name="app_name">GoTravel</string>
     <string name="Home">Home</string>
     <string name="Transport">Transport</string>
     <string name="Trip">Trip</string>

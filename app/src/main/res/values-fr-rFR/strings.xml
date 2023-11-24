@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Bonjour</string>
-    <string name="title">Bonjour World!</string>
+    <string name="app_name">GoTravel</string>
     <string name="Home">Home</string>
     <string name="Transport">Transport</string>
     <string name="Trip">Trip</string>
