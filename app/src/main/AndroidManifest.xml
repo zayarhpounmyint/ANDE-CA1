@@ -26,6 +26,9 @@
                 android:value="" />
         </activity>
         <activity android:name=".MainActivity"></activity>
+        <activity android:name=".AttractionActivity" />
+        <activity android:name=".AttractionDetailsActivity" />
+        <activity android:name=".DatePickerActivity" />
     </application>
 
 </manifest>
