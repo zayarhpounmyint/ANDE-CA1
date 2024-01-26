@@ -6,96 +6,109 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/searchAttractionsText"
+        android:layout_width="207dp"
+        android:layout_height="49dp"
         android:ems="10"
+        android:hint="Search attractions here"
         android:inputType="text"
-        android:text="Name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.134" />
+        app:layout_constraintVertical_bias="0.049" />
+
+    <ImageButton
+        android:id="@+id/searchAttractionsBtn"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.049"
+        app:srcCompat="@drawable/search_btn" />
 
     <Button
         android:id="@+id/foodBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onCategoryBtnClick"
         android:text="Food"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298"
-        android:onClick="onCategoryBtnClick" />
+        app:layout_constraintVertical_bias="0.185" />
 
     <Button
         android:id="@+id/entertainBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onCategoryBtnClick"
         android:text="Entertain"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298"
-        android:onClick="onCategoryBtnClick" />
+        app:layout_constraintVertical_bias="0.184" />
 
     <Button
         android:id="@+id/natureBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onCategoryBtnClick"
         android:text="Nature"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.883"
+        app:layout_constraintHorizontal_bias="0.896"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.298"
-        android:onClick="onCategoryBtnClick" />
+        app:layout_constraintVertical_bias="0.184" />
 
     <Button
         android:id="@+id/hotelBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onCategoryBtnClick"
         android:text="Hotel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.426"
-        android:onClick="onCategoryBtnClick" />
+        app:layout_constraintVertical_bias="0.279" />
 
     <Button
         android:id="@+id/sportsBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onCategoryBtnClick"
         android:text="Sports"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
+        app:layout_constraintHorizontal_bias="0.122"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.426"
-        android:onClick="onCategoryBtnClick" />
+        app:layout_constraintVertical_bias="0.279" />
 
     <Button
         android:id="@+id/cultureBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onCategoryBtnClick"
         android:text="Culture"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintHorizontal_bias="0.893"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.426"
-        android:onClick="onCategoryBtnClick" />
+        app:layout_constraintVertical_bias="0.279" />
 
     <TextView
         android:id="@+id/textView"
@@ -107,16 +120,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.886" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="380dp"
-        android:layout_height="351dp"
+        android:layout_width="357dp"
+        android:layout_height="422dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.923" />
+        app:layout_constraintVertical_bias="0.88" />
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

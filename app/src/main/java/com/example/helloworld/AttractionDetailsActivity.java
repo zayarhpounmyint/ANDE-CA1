@@ -16,6 +16,18 @@ public class AttractionDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.attraction_details);
 
+        Button backButton = findViewById(R.id.backBtn);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Create an Intent to start the activity you want to go back to
+                Intent intent = new Intent(AttractionDetailsActivity.this, AttractionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         // Get data from the intent
         Intent intent = getIntent();
         String title = intent.getStringExtra("Title");

@@ -1,6 +1,7 @@
 package com.example.helloworld;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HorizontalCityAdapter extends RecyclerView.Adapter<HorizontalCityAdapter.HorizontalViewHolder> {
 
     private List<City> items;
+
 
     public HorizontalCityAdapter(List<City> items) {
         this.items = items;
@@ -34,7 +37,8 @@ public class HorizontalCityAdapter extends RecyclerView.Adapter<HorizontalCityAd
         holder.titleTextView.setText(item.getTitle());
         holder.descriptionTextView.setText(item.getDescription());
         holder.infoButton.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), item.getDestinationActivity());
+            Log.d("ButtonClick", "Button clicked for item: " + item.getTitle());
+            Intent intent = new Intent(v.getContext(), AttractionActivity.class);
             v.getContext().startActivity(intent);
         });
     }
@@ -57,6 +61,11 @@ public class HorizontalCityAdapter extends RecyclerView.Adapter<HorizontalCityAd
             descriptionTextView = itemView.findViewById(R.id.horizontal_item_description);
             infoButton = itemView.findViewById(R.id.horizontal_item_button);
         }
+    }
+
+    public void setNewItems(List<City> newData) {
+        this.items = newData;
+        notifyDataSetChanged();
     }
 }
 

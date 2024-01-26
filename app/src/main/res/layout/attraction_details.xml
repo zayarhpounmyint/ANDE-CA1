@@ -7,6 +7,12 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back" />
+
     <TextView
         android:id="@+id/textDetailsTitle"
         android:layout_width="match_parent"
@@ -20,25 +26,25 @@
         android:id="@+id/textDetailsDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Attraction Title"
+        android:layout_marginBottom="8dp"
+        android:text="Attraction Description"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textDetailsWebsite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Attraction Title"
+        android:layout_marginBottom="8dp"
+        android:text="Attraction Website"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/addToListBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Add to list" />
 
 
 </LinearLayout>

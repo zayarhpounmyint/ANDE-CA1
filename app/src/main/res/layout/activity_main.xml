@@ -11,8 +11,8 @@
         android:layout_width="278dp"
         android:layout_height="46dp"
         android:ems="10"
+        android:hint="Search for a city"
         android:inputType="textPersonName"
-        android:text="Search for a city"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -212,7 +212,7 @@
 
     <Button
         android:id="@+id/recommendBtn"
-        android:layout_width="116dp"
+        android:layout_width="122dp"
         android:layout_height="37dp"
         android:layout_marginEnd="16dp"
         android:text="Recommended"
@@ -223,36 +223,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.158" />
 
-<!--    <ImageButton-->
-<!--        android:id="@+id/paris_btn"-->
-<!--        android:layout_width="45dp"-->
-<!--        android:layout_height="35dp"-->
-<!--        android:background="@color/white"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.887"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.735"-->
-<!--        app:srcCompat="@drawable/arrow"-->
-<!--        android:onClick="redirectToParis"/>-->
-
-<!--    <ImageButton-->
-<!--        android:id="@+id/italy_btn"-->
-<!--        android:layout_width="45dp"-->
-<!--        android:layout_height="35dp"-->
-<!--        android:background="@color/white"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.887"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.936"-->
-<!--        app:srcCompat="@drawable/arrow" />-->
-
-    <!-- Horizontal RecyclerView -->
-
-    <!-- Vertical RecyclerView -->
 
     <ImageButton
         android:id="@+id/imageButton"

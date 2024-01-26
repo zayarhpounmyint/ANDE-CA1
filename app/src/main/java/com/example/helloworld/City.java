@@ -5,12 +5,14 @@ public class City {
     private int imageResource;
     private String description;
     private Class<?> destinationActivity;
+    private String category;
 
-    public City(String title, int imageResource, String description, Class<?> destinationActivity) {
+    public City(String title, int imageResource, String description, Class<?> destinationActivity, String category) {
         this.title = title;
         this.description = description;
         this.imageResource = imageResource;
         this.destinationActivity = destinationActivity;
+        this.category = category;
     }
 
     public String getTitle() {
@@ -27,5 +29,9 @@ public class City {
 
     public Class<?> getDestinationActivity() {
         return destinationActivity;
+    }
+
+    public String getCategory() {
+        return category;
     }
 }
