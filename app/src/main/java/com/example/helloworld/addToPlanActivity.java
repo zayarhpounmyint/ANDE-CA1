@@ -3,6 +3,7 @@ package com.example.helloworld;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,14 +11,18 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.Calendar;
 
-public class DatePickerActivity extends AppCompatActivity {
+public class addToPlanActivity extends AppCompatActivity {
 
     Button btnStartDate, btnEndDate, btnStartTime, btnEndTime, btnConfirmPlan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.date_picker);
+        setContentView(R.layout.add_to_plan);
+
+        Intent intent = getIntent();
+        String title = intent.getStringExtra("Title");
+        String location = intent.getStringExtra("Location");
 
         // Initialize buttons
         btnStartDate = findViewById(R.id.btnStartDatePicker);
@@ -42,7 +47,7 @@ public class DatePickerActivity extends AppCompatActivity {
                         || btnStartTime.getText().equals("Select Time")
                         || btnEndTime.getText().equals("Select Time")) {
                     // Alert the user
-                    new AlertDialog.Builder(DatePickerActivity.this)
+                    new AlertDialog.Builder(addToPlanActivity.this)
                             .setTitle("Incomplete Information")
                             .setMessage("Please select all dates and times before confirming.")
                             .setPositiveButton("OK", null)
@@ -64,7 +69,7 @@ public class DatePickerActivity extends AppCompatActivity {
                 int month = c.get(Calendar.MONTH);
                 int day = c.get(Calendar.DAY_OF_MONTH);
 
-                DatePickerDialog datePickerDialog = new DatePickerDialog(DatePickerActivity.this,
+                DatePickerDialog datePickerDialog = new DatePickerDialog(addToPlanActivity.this,
                         (view, year1, monthOfYear, dayOfMonth) -> {
                             String selectedDate = dayOfMonth + "-" + (monthOfYear + 1) + "-" + year1;
                             button.setText(selectedDate);
@@ -83,7 +88,7 @@ public class DatePickerActivity extends AppCompatActivity {
                 int hour = c.get(Calendar.HOUR_OF_DAY);
                 int minute = c.get(Calendar.MINUTE);
 
-                TimePickerDialog timePickerDialog = new TimePickerDialog(DatePickerActivity.this,
+                TimePickerDialog timePickerDialog = new TimePickerDialog(addToPlanActivity.this,
                         (view, hourOfDay, minute1) -> {
                             String selectedTime = hourOfDay + ":" + minute1;
                             button.setText(selectedTime);

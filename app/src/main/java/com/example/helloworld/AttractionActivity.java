@@ -31,7 +31,7 @@ public class AttractionActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Create an Intent to start the activity you want to go back to
+                // Create an Intent to start to go back to MainActivity
                 Intent intent = new Intent(AttractionActivity.this, MainActivity.class);
                 startActivity(intent);
             }
@@ -78,19 +78,19 @@ public class AttractionActivity extends AppCompatActivity {
         //db.clearAllData();
         if (db.getAttractionsCount() == 0) {
             // Add initial attractions
-            db.addAttraction(new Attraction("Food", R.drawable.harajuku_gyoza, "Harajuku Gyoza Lou", "description", 4.9, 1.2, "website"));
-            db.addAttraction(new Attraction("Food", R.drawable.sushiro, "Sushiro", "description", 4.9, 1.2, "website"));
-            db.addAttraction(new Attraction("Food", R.drawable.nisshin, "Nisshin Tasuke", "description", 4.9, 1.2, "website"));
-            db.addAttraction(new Attraction("Food", R.drawable.ramen, "Oreryu Shio Ramen", "description", 4.9, 1.2, "website"));
-            db.addAttraction(new Attraction("Entertainment", R.drawable.disneyland, "DisneyLand", "description", 4.9, 1.2, "website"));
-            db.addAttraction(new Attraction("Entertainment", R.drawable.disneysea, "DisneySea", "description", 4.9, 1.2, "website"));
-            db.addAttraction(new Attraction("Nature", R.drawable.euno_park, "Ueno Park", "A large public park known for its museums, zoo, and during the spring, its beautiful cherry blossoms. It's a great place for a leisurely walk or a picnic.", 4.9, 1.2, "website"));
-            db.addAttraction(new Attraction("Nature", R.drawable.shinjuku_gyoen, "Shinjuku Gyoen National Garden", "This spacious park blends three distinct styles: traditional Japanese, English Landscape, and French Formal. It's particularly stunning during cherry blossom and autumn leaf seasons.", 4.9, 1.2, "website"));
-            db.addAttraction(new Attraction("Nature", R.drawable.yoyogi, "Yoyogi Park", "Known for its wide-open spaces, this park is a popular spot for jogging, picnicking, and leisurely strolls. It's also close to the Meiji Shrine, another green and peaceful area.", 4.9, 1.2, "website"));
-            db.addAttraction(new Attraction("Sports", R.drawable.volleyball, "Beach Volleyball at Odaiba Beach", "description", 4.9, 1.2, "website"));
-            db.addAttraction(new Attraction("Hotel", R.drawable.hotel, "Park Hyatt Tokyo", "Famous from the movie \"Lost in Translation,\" this hotel offers luxurious rooms with stunning city views, located in Shinjuku.", 4.9, 1.2, "website"));
-            db.addAttraction(new Attraction("Culture", R.drawable.imperial, "The Imperial Palace", "Located in the heart of Tokyo, the Imperial Palace is the primary residence of the Emperor of Japan. While the palace itself is generally not open to the public, the East Gardens offer a beautiful walk and a glimpse into Japanese history.", 4.9, 1.2, "website"));
-            db.addAttraction(new Attraction("Culture", R.drawable.museum, "Tokyo National Museum", "Located in Ueno Park, this museum houses the largest collection of Japanese art in the world, including samurai armor, ancient pottery, and ukiyo-e prints.", 4.9, 1.2, "website"));
+            db.addAttraction(new Attraction("Food", R.drawable.harajuku_gyoza, "Harajuku Gyoza Lou", "Famous for its delicious gyoza in a casual setting.", 4.7, "Harajuku, Tokyo", 3.2, "http://harajukugyozalou.jp"));
+            db.addAttraction(new Attraction("Food", R.drawable.sushiro, "Sushiro", "Popular conveyor belt sushi restaurant offering a variety of dishes.", 4.8, "Shibuya, Tokyo", 2.5, "http://sushiro.jp"));
+            db.addAttraction(new Attraction("Food", R.drawable.nisshin, "Nisshin Tasuke", "Renowned for its traditional unagi (eel) dishes.", 4.6, "Asakusa, Tokyo", 4.0, "http://nisshintasuke.jp"));
+            db.addAttraction(new Attraction("Food", R.drawable.ramen, "Oreryu Shio Ramen", "Specializes in shio (salt) ramen, known for its rich flavor.", 4.9, "Shinjuku, Tokyo", 1.8, "http://oreryushioramen.jp"));
+            db.addAttraction(new Attraction("Entertainment", R.drawable.disneyland, "DisneyLand", "The classic Disney theme park experience with a Japanese twist.", 4.7, "Urayasu, Tokyo", 5.5, "http://tokyodisneyland.jp"));
+            db.addAttraction(new Attraction("Entertainment", R.drawable.disneysea, "DisneySea", "A unique Disney park themed around nautical explorations and adventures.", 4.8, "Urayasu, Tokyo", 5.3, "http://tokyodisneysea.jp"));
+            db.addAttraction(new Attraction("Nature", R.drawable.euno_park, "Ueno Park", "A large public park known for its museums, zoo, and beautiful cherry blossoms.", 4.5, "Ueno, Tokyo", 2.1, "http://uenopark.jp"));
+            db.addAttraction(new Attraction("Nature", R.drawable.shinjuku_gyoen, "Shinjuku Gyoen National Garden", "A spacious park blending traditional Japanese, English, and French garden styles.", 4.6, "Shinjuku, Tokyo", 3.7, "http://shinjukugyoen.jp"));
+            db.addAttraction(new Attraction("Nature", R.drawable.yoyogi, "Yoyogi Park", "Known for its wide-open spaces, popular for jogging and picnics.", 4.8, "Shibuya, Tokyo", 2.9, "http://yoyogipark.jp"));
+            db.addAttraction(new Attraction("Sports", R.drawable.volleyball, "Beach Volleyball at Odaiba Beach", "Odaiba Beach is a popular spot for beach volleyball and other activities.", 4.4, "Odaiba, Tokyo", 6.2, "http://odaibabeachvolleyball.jp"));
+            db.addAttraction(new Attraction("Hotel", R.drawable.hotel, "Park Hyatt Tokyo", "Luxurious hotel with stunning city views, famous from 'Lost in Translation'.", 4.9, "Shinjuku, Tokyo", 3.4, "http://parkhyatttokyo.jp"));
+            db.addAttraction(new Attraction("Culture", R.drawable.imperial, "The Imperial Palace", "The primary residence of the Emperor of Japan, surrounded by beautiful gardens.", 4.7, "Chiyoda, Tokyo", 1.5, "http://imperialpalacetokyo.jp"));
+            db.addAttraction(new Attraction("Culture", R.drawable.museum, "Tokyo National Museum", "Houses the largest collection of Japanese art, located in Ueno Park.", 4.6, "Ueno, Tokyo", 2.6, "http://tokyonationalmuseum.jp"));
         }
     }
 

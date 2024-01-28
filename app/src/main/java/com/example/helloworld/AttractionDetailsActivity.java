@@ -2,6 +2,7 @@ package com.example.helloworld;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,22 +31,35 @@ public class AttractionDetailsActivity extends AppCompatActivity {
 
         // Get data from the intent
         Intent intent = getIntent();
+        int image = intent.getIntExtra("Image",0);
         String title = intent.getStringExtra("Title");
         String desc = intent.getStringExtra("Description");
         String rating = intent.getStringExtra("Rating");
+        String location = intent.getStringExtra("Location");
         String distance = intent.getStringExtra("Distance");
         String website = intent.getStringExtra("Website");
 
         // Set data to views on the details page
+        ImageView attractionImg = findViewById(R.id.attractionImg);
+        attractionImg.setImageResource(image);
+
         TextView textDetailsTitle = findViewById(R.id.textDetailsTitle);
         textDetailsTitle.setText(title);
 
         TextView textDetailsDesc = findViewById(R.id.textDetailsDesc);
         textDetailsDesc.setText(desc);
 
+        TextView textDetailsRating = findViewById(R.id.textDetailsRating);
+        textDetailsDesc.setText(rating);
+
+        TextView textDetailsLocation = findViewById(R.id.textDetailsLocation);
+        textDetailsLocation.setText(location);
+
         TextView textDetailsWebsite = findViewById(R.id.textDetailsWebsite);
         textDetailsWebsite.setText(website);
 
+        intent.putExtra("Title", title);
+        intent.putExtra("Location", location);
 
         //add to list button
         Button addToListBtn = findViewById(R.id.addToListBtn);
@@ -55,7 +69,7 @@ public class AttractionDetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Create an Intent to start NewActivity
-                Intent intent = new Intent(AttractionDetailsActivity.this, DatePickerActivity.class);
+                Intent intent = new Intent(AttractionDetailsActivity.this, addToPlanActivity.class);
                 startActivity(intent);
             }
         });

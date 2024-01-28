@@ -52,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         db = new DatabaseHandler(this);
+        
+        if (db.getCityCount() == 0) {
+            initializeCityData();
+        }
 
         // Set up the horizontal RecyclerView
         horizontalRecyclerView = findViewById(R.id.horizontal_recycler_view);
@@ -65,10 +69,6 @@ public class MainActivity extends AppCompatActivity {
         verticalAdapter = new VerticalCityAdapter(getVerticalCitiesData());
         verticalRecyclerView.setAdapter(verticalAdapter);
 
-
-        if (db.getCityCount() == 0) {
-            initializeCityData();
-        }
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,12 +118,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initializeCityData() {
-        db.addCity(new City("Tokyo", R.drawable.tokyo, "Beautiful and culturally rich metropolis, where ancient traditions seamlessly coexist with the bustle of modern urban life.", AttractionActivity.class, "Popular"));
-        db.addCity(new City("Kyoto", R.drawable.kyoto, "Beautiful city with historical sites.", AttractionActivity.class, "Recommended"));
-        db.addCity(new City("Bali", R.drawable.bali, "A paradise, celebrated for its lush landscapes, rich cultural heritage, and tranquil, spiritual atmosphere.", AttractionActivity.class, "Nearby"));
-        db.addCity(new City("New York", R.drawable.newyork, "The city that never sleeps.", AttractionActivity.class, "Recommended"));
-        db.addCity(new City("Paris", R.drawable.paris, "Renowned for its romantic ambiance, classic art, and world-class landmarks like the Eiffel Tower.", AttractionActivity.class, "Top"));
-        db.addCity(new City("Rome", R.drawable.rome, "Widely known for their rich history, landmarks and culture.", AttractionActivity.class, "Top"));
+        db.addCity(new City("Tokyo", R.drawable.tokyo, "Epicenter of technology, ancient traditions, and landmarks like the Shibuya Crossing and Senso-ji Temple", "Popular"));
+        db.addCity(new City("Kyoto", R.drawable.kyoto, "Historic city known for its classical Buddhist temples, gardens, imperial palaces, and traditional teahouses", "Recommended"));
+        db.addCity(new City("Bali", R.drawable.bali, "Island of the Gods, with verdant forests, iconic rice paddies, and deeply spiritual culture", "Nearby"));
+        db.addCity(new City("New York", R.drawable.newyork, "Bustling metropolis famed for Broadway, towering skyscrapers, and the sprawling Central Park", "Recommended"));
+        db.addCity(new City("Paris", R.drawable.paris, "City of Light, famous for art, cuisine, fashion, and the iconic Eiffel Tower", "Top"));
+        db.addCity(new City("Rome", R.drawable.rome, "Eternal City with timeless architecture, the Vatican, ancient ruins, and culinary delights", "Top"));
     }
 
     private List<City> getHorizontalCitiesData() {

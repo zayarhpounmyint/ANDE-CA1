@@ -20,6 +20,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_TITLE = "title";
     private static final String KEY_DESCRIPTION = "description";
     private static final String KEY_RATING = "rating";
+    private static final String KEY_LOCATION = "location";
     private static final String KEY_DISTANCE = "distance";
     private static final String KEY_WEBSITE = "website";
 
@@ -43,7 +44,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_CATEGORY + " TEXT,"
                 + KEY_IMAGE + " INTEGER," + KEY_TITLE + " TEXT,"
                 + KEY_DESCRIPTION + " TEXT," + KEY_RATING + " REAL,"
-                + KEY_DISTANCE + " REAL," + KEY_WEBSITE + " TEXT" + ")";
+                + KEY_LOCATION + " REAL," + KEY_DISTANCE + " REAL,"
+                + KEY_WEBSITE + " TEXT" + ")";
         db.execSQL(CREATE_ATTRACTIONS_TABLE);
 
 
@@ -75,6 +77,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_TITLE, attraction.getTitle());
         values.put(KEY_DESCRIPTION, attraction.getDescription());
         values.put(KEY_RATING, attraction.getRating());
+        values.put(KEY_LOCATION, attraction.getLocation());
         values.put(KEY_DISTANCE, attraction.getDistance());
         values.put(KEY_WEBSITE, attraction.getWebsite());
 
@@ -87,7 +90,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_ATTRACTIONS, new String[] { KEY_ID,
-                        KEY_CATEGORY, KEY_IMAGE, KEY_TITLE, KEY_DESCRIPTION, KEY_RATING, KEY_DISTANCE, KEY_WEBSITE }, KEY_ID + "=?",
+                        KEY_CATEGORY, KEY_IMAGE, KEY_TITLE, KEY_DESCRIPTION, KEY_RATING, KEY_LOCATION, KEY_DISTANCE, KEY_WEBSITE }, KEY_ID + "=?",
                 new String[] { String.valueOf(id) }, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
@@ -99,8 +102,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 cursor.getString(3), // Title
                 cursor.getString(4), // Description
                 cursor.getDouble(5), // Rating
-                cursor.getDouble(6), // Distance
-                cursor.getString(7)  // Website
+                cursor.getString(6), // Location
+                cursor.getDouble(7), // Distance
+                cursor.getString(8)  // Website
         );
         cursor.close();
         return attraction;
@@ -110,7 +114,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         List<Attraction> attractionList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_ATTRACTIONS, new String[] { KEY_ID, KEY_CATEGORY, KEY_IMAGE, KEY_TITLE, KEY_DESCRIPTION, KEY_RATING, KEY_DISTANCE, KEY_WEBSITE },
+        Cursor cursor = db.query(TABLE_ATTRACTIONS, new String[] { KEY_ID, KEY_CATEGORY, KEY_IMAGE, KEY_TITLE, KEY_DESCRIPTION, KEY_RATING, KEY_LOCATION, KEY_DISTANCE, KEY_WEBSITE },
                 KEY_CATEGORY + "=?", new String[] { category }, null, null, null);
 
         if (cursor.moveToFirst()) {
@@ -122,8 +126,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                         cursor.getString(3), // Title
                         cursor.getString(4), // Description
                         cursor.getDouble(5), // Rating
-                        cursor.getDouble(6), // Distance
-                        cursor.getString(7)  // Website
+                        cursor.getString(6), // Location
+                        cursor.getDouble(7), // Distance
+                        cursor.getString(8)  // Website
                 );
                 attractionList.add(attraction);
             } while (cursor.moveToNext());
@@ -151,8 +156,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                         cursor.getString(3), // Title
                         cursor.getString(4), // Description
                         cursor.getDouble(5), // Rating
-                        cursor.getDouble(6), // Distance
-                        cursor.getString(7)  // Website
+                        cursor.getString(6), // Location
+                        cursor.getDouble(7), // Distance
+                        cursor.getString(8)  // Website
                 );
                 attractionList.add(attraction);
             } while (cursor.moveToNext());
@@ -172,6 +178,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_TITLE, attraction.getTitle());
         values.put(KEY_DESCRIPTION, attraction.getDescription());
         values.put(KEY_RATING, attraction.getRating());
+        values.put(KEY_DISTANCE, attraction.getLocation());
         values.put(KEY_DISTANCE, attraction.getDistance());
         values.put(KEY_WEBSITE, attraction.getWebsite());
 
@@ -208,7 +215,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         List<Attraction> attractionList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_ATTRACTIONS, new String[] { KEY_ID, KEY_CATEGORY, KEY_IMAGE, KEY_TITLE, KEY_DESCRIPTION, KEY_RATING, KEY_DISTANCE, KEY_WEBSITE },
+        Cursor cursor = db.query(TABLE_ATTRACTIONS, new String[] { KEY_ID, KEY_CATEGORY, KEY_IMAGE, KEY_TITLE, KEY_DESCRIPTION, KEY_RATING, KEY_LOCATION, KEY_DISTANCE, KEY_WEBSITE },
                 KEY_TITLE + " LIKE ?", new String[] { "%" + title + "%" }, null, null, null);
 
         if (cursor.moveToFirst()) {
@@ -221,6 +228,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                         cursor.getString(cursor.getColumnIndex(KEY_TITLE)), // Title
                         cursor.getString(cursor.getColumnIndex(KEY_DESCRIPTION)), // Description
                         cursor.getDouble(cursor.getColumnIndex(KEY_RATING)), // Rating
+                        cursor.getString(cursor.getColumnIndex(KEY_LOCATION)), // Location
                         cursor.getDouble(cursor.getColumnIndex(KEY_DISTANCE)), // Distance
                         cursor.getString(cursor.getColumnIndex(KEY_WEBSITE))  // Website
                 );
@@ -260,7 +268,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                         cursor.getString(cursor.getColumnIndex(KEY_CITY_TITLE)),
                         cursor.getInt(cursor.getColumnIndex(KEY_CITY_IMAGE)),
                         cursor.getString(cursor.getColumnIndex(KEY_CITY_DESCRIPTION)),
-                        null, // destinationActivity is not stored in the database
                         cursor.getString(cursor.getColumnIndex(KEY_CITY_CATEGORY))
                 );
                 cityList.add(city);
@@ -286,7 +293,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                         cursor.getString(cursor.getColumnIndex(KEY_CITY_TITLE)),
                         cursor.getInt(cursor.getColumnIndex(KEY_CITY_IMAGE)),
                         cursor.getString(cursor.getColumnIndex(KEY_CITY_DESCRIPTION)),
-                        null, // destinationActivity is not stored in the database
                         cursor.getString(cursor.getColumnIndex(KEY_CITY_CATEGORY))
                 );
                 cityList.add(city);
@@ -313,7 +319,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                         cursor.getString(cursor.getColumnIndex(KEY_CITY_TITLE)),
                         cursor.getInt(cursor.getColumnIndex(KEY_CITY_IMAGE)),
                         cursor.getString(cursor.getColumnIndex(KEY_CITY_DESCRIPTION)),
-                        null, // destinationActivity is not stored in the database
                         cursor.getString(cursor.getColumnIndex(KEY_CITY_CATEGORY))
                 );
                 cityList.add(city);

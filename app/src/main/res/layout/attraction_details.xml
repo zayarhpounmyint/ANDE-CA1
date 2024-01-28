@@ -1,50 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/backBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Back" />
+        android:layout_width="180dp"
+        android:layout_height="43dp"
+        android:text="Back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <ImageView
+        android:id="@+id/attractionImg"
+        android:layout_width="251dp"
+        android:layout_height="198dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.543"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.131"
+        app:srcCompat="@drawable/ramen" />
 
     <TextView
         android:id="@+id/textDetailsTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
         android:text="Attraction Title"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.441" />
 
     <TextView
         android:id="@+id/textDetailsDesc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_width="334dp"
+        android:layout_height="60dp"
         android:text="Attraction Description"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.54" />
+
+    <TextView
+        android:id="@+id/textDetailsRating"
+        android:layout_width="315dp"
+        android:layout_height="37dp"
+        android:text="Attraction Rating"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.635" />
+
+    <TextView
+        android:id="@+id/textDetailsLocation"
+        android:layout_width="260dp"
+        android:layout_height="41dp"
+        android:text="Attraction Location"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.251"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71" />
 
     <TextView
         android:id="@+id/textDetailsWebsite"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_width="309dp"
+        android:layout_height="43dp"
         android:text="Attraction Website"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.812" />
 
     <Button
         android:id="@+id/addToListBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add to list" />
+        android:layout_width="237dp"
+        android:layout_height="54dp"
+        android:text="Add to list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.924" />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
