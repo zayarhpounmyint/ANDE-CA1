@@ -20,9 +20,26 @@ public class addToPlanActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_to_plan);
 
+        Button cancelButton = findViewById(R.id.cancelBtn);
+
         Intent intent = getIntent();
-        String title = intent.getStringExtra("Title");
-        String location = intent.getStringExtra("Location");
+        int id = intent.getIntExtra("id",0);
+
+        DatabaseHandler db = new DatabaseHandler(this);
+        Attraction attractionAdded = db.getAttraction(id);
+        String title = attractionAdded.getTitle();
+        String location = attractionAdded.getLocation();
+
+        cancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(addToPlanActivity.this, AttractionDetailsActivity.class);
+                intent.putExtra("id", id);
+                startActivity(intent);
+            }
+        });
+
+
 
         // Initialize buttons
         btnStartDate = findViewById(R.id.btnStartDatePicker);

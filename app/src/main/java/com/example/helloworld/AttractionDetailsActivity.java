@@ -29,15 +29,28 @@ public class AttractionDetailsActivity extends AppCompatActivity {
         });
 
 
+
         // Get data from the intent
         Intent intent = getIntent();
-        int image = intent.getIntExtra("Image",0);
-        String title = intent.getStringExtra("Title");
-        String desc = intent.getStringExtra("Description");
-        String rating = intent.getStringExtra("Rating");
-        String location = intent.getStringExtra("Location");
-        String distance = intent.getStringExtra("Distance");
-        String website = intent.getStringExtra("Website");
+        int id = intent.getIntExtra("id",0);
+//        int image = intent.getIntExtra("Image",0);
+//        String title = intent.getStringExtra("Title");
+//        String desc = intent.getStringExtra("Description");
+//        Double rating = intent.getDoubleExtra("Rating",0);
+//        String location = intent.getStringExtra("Location");
+//        String distance = intent.getStringExtra("Distance");
+//        String website = intent.getStringExtra("Website");
+
+        DatabaseHandler db = new DatabaseHandler(this);
+        Attraction attractionDetails = db.getAttraction(id);
+        int image = attractionDetails.getImage();
+        String title = attractionDetails.getTitle();
+        String desc = attractionDetails.getDescription();
+        Double rating = attractionDetails.getRating();
+        String location = attractionDetails.getLocation();
+        String website = attractionDetails.getWebsite();
+
+
 
         // Set data to views on the details page
         ImageView attractionImg = findViewById(R.id.attractionImg);
@@ -50,16 +63,14 @@ public class AttractionDetailsActivity extends AppCompatActivity {
         textDetailsDesc.setText(desc);
 
         TextView textDetailsRating = findViewById(R.id.textDetailsRating);
-        textDetailsDesc.setText(rating);
+        textDetailsRating.setText(rating.toString());
 
         TextView textDetailsLocation = findViewById(R.id.textDetailsLocation);
         textDetailsLocation.setText(location);
 
         TextView textDetailsWebsite = findViewById(R.id.textDetailsWebsite);
         textDetailsWebsite.setText(website);
-
-        intent.putExtra("Title", title);
-        intent.putExtra("Location", location);
+        
 
         //add to list button
         Button addToListBtn = findViewById(R.id.addToListBtn);
@@ -70,6 +81,7 @@ public class AttractionDetailsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Create an Intent to start NewActivity
                 Intent intent = new Intent(AttractionDetailsActivity.this, addToPlanActivity.class);
+                intent.putExtra("id", id);
                 startActivity(intent);
             }
         });

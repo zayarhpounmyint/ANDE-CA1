@@ -41,6 +41,7 @@ public class AttractionAdapter extends RecyclerView.Adapter<AttractionAdapter.Vi
                 // Start DetailsActivity and pass data
                 Context context = v.getContext();
                 Intent intent = new Intent(context, AttractionDetailsActivity.class);
+                intent.putExtra("id", item.getId());
                 intent.putExtra("Image", item.getImage());
                 intent.putExtra("Title", item.getTitle());
                 intent.putExtra("Description", item.getDescription());
