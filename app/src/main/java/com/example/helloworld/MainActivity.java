@@ -1,6 +1,8 @@
 package com.example.helloworld;
 
+
 import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+
 import android.view.MenuItem;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private Button recommendBtn;
     private EditText searchInput;
     private ImageButton searchButton;
+
     private BottomNavigationView bottomNavigationView;
     private void hideOtherElements() {
         horizontalRecyclerView.setVisibility(View.GONE);
@@ -46,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         searchInput.setVisibility(View.GONE);
         searchButton.setVisibility(View.GONE);
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         db = new DatabaseHandler(this);
+        
+        if (db.getCityCount() == 0) {
+            initializeCityData();
+        }
+
 
         // Set up the horizontal RecyclerView
         horizontalRecyclerView = findViewById(R.id.horizontal_recycler_view);
@@ -81,9 +92,11 @@ public class MainActivity extends AppCompatActivity {
         verticalRecyclerView.setAdapter(verticalAdapter);
 
 
+
         if (db.getCityCount() == 0) {
             initializeCityData();
         }
+
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
                 horizontalAdapter.setNewItems(db.getCitiesByCategory("Recommended"));
             }
         });
+
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
@@ -181,7 +195,10 @@ public class MainActivity extends AppCompatActivity {
         db.addCity(new City("New York", R.drawable.newyork, "The city that never sleeps.", AttractionActivity.class, "Recommended"));
         db.addCity(new City("Paris", R.drawable.paris, "Renowned for its romantic ambiance, classic art, and world-class landmarks like the Eiffel Tower.", AttractionActivity.class, "Top"));
         db.addCity(new City("Rome", R.drawable.rome, "Widely known for their rich history, landmarks and culture.", AttractionActivity.class, "Top"));
+
     }
+
+
 
     private List<City> getHorizontalCitiesData() {
         return db.getAllCities();

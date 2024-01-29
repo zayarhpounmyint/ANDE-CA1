@@ -41,12 +41,23 @@ public class AttractionAdapter extends RecyclerView.Adapter<AttractionAdapter.Vi
                 // Start DetailsActivity and pass data
                 Context context = v.getContext();
                 Intent intent = new Intent(context, AttractionDetailsActivity.class);
+<<<<<<< HEAD
                 intent.putExtra("Title", item.getTitle());
                 intent.putExtra("Description", item.getDescription());
                 intent.putExtra("Rating", item.getRating());
                 intent.putExtra("Distance", item.getDistance());
                 intent.putExtra("Website", item.getWebsite());
                 // Add more data as needed
+=======
+                intent.putExtra("id", item.getId());
+                intent.putExtra("Image", item.getImage());
+                intent.putExtra("Title", item.getTitle());
+                intent.putExtra("Description", item.getDescription());
+                intent.putExtra("Rating", item.getRating());
+                intent.putExtra("Location", item.getLocation());
+                intent.putExtra("Distance", item.getDistance());
+                intent.putExtra("Website", item.getWebsite());
+>>>>>>> 6bc17592a1b04fc939256fae9370749a5eff503c
                 context.startActivity(intent);
             }
         });

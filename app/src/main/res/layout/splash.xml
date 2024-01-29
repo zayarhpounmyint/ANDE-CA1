@@ -24,7 +24,11 @@
         android:layout_height="41dp"
         android:text="Explore Beyond Borders."
         android:textAlignment="center"
+<<<<<<< HEAD
         android:textColor="@color/blue"
+=======
+        android:textColor="@color/lightblue"
+>>>>>>> 6bc17592a1b04fc939256fae9370749a5eff503c
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

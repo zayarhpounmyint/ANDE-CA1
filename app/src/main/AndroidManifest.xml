@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.helloworld">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+=======
+    xmlns:tools="http://schemas.android.com/tools">
+>>>>>>> 6bc17592a1b04fc939256fae9370749a5eff503c
 
     <application
         android:allowBackup="true"
@@ -31,9 +35,13 @@
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".AttractionActivity" />
         <activity android:name=".AttractionDetailsActivity" />
+<<<<<<< HEAD
         <activity android:name=".DatePickerActivity" />
         <activity android:name=".LoginActivity"/>
         <activity android:name=".RegisterActivity"/>
+=======
+        <activity android:name=".addToPlanActivity" />
+>>>>>>> 6bc17592a1b04fc939256fae9370749a5eff503c
     </application>
 
 </manifest>

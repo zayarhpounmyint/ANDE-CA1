@@ -272,6 +272,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
+<<<<<<< HEAD
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
@@ -279,5 +280,7 @@
         android:layout_below="@id/vertical_recycler_view"
         android:layout_marginTop="16dp"/>
 
+=======
+>>>>>>> 6bc17592a1b04fc939256fae9370749a5eff503c
 
 </androidx.constraintlayout.widget.ConstraintLayout>
